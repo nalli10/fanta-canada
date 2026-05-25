@@ -754,6 +754,42 @@ table.prize-tbl .prize-empty { color:#999; font-style:italic; }
               letter-spacing:0.4px; }
 </style>
 <style>
+.lv-stamp { font-size: 12px; color: #6e6e73; margin-bottom: 12px;
+            display: flex; gap: 8px; align-items: center; }
+.lv-stamp .lv-dot { width: 10px; height: 10px; border-radius: 50%;
+            background: #e74c3c; box-shadow: 0 0 0 0 rgba(231,76,60,0.6);
+            animation: lv-pulse 1.4s ease-out infinite; }
+@keyframes lv-pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(231,76,60,0.55); }
+    70%  { box-shadow: 0 0 0 8px rgba(231,76,60,0);  }
+    100% { box-shadow: 0 0 0 0 rgba(231,76,60,0);    }
+}
+.lv-grid { display: grid; gap: 12px;
+           grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); }
+.lv-match { background: #fff; border: 1px solid #e0e0e0; border-radius: 10px;
+            padding: 14px; display: flex; align-items: stretch; gap: 12px; }
+.lv-team { flex: 1 1 0; min-width: 0; }
+.lv-team-n { font-weight: 700; color: #1a3a5c; font-size: 14px;
+             white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lv-team-tot { font-size: 26px; font-weight: 800; color: var(--theme-primary);
+               font-variant-numeric: tabular-nums; line-height: 1; margin: 4px 0; }
+.lv-team-mod { font-size: 11px; color: #888; text-transform: uppercase;
+               letter-spacing: 0.4px; margin-bottom: 8px; }
+.lv-team-pl { display: flex; flex-direction: column; gap: 2px; }
+.lv-pl { display: flex; justify-content: space-between; font-size: 12px; }
+.lv-pl-n { color: #2c2c2e; overflow: hidden; text-overflow: ellipsis;
+           white-space: nowrap; flex: 1; }
+.lv-pl-fv { font-variant-numeric: tabular-nums; font-weight: 700;
+            color: #1a3a5c; margin-left: 6px; }
+.lv-vs { align-self: center; color: #999; font-size: 11px; font-weight: 700;
+         text-transform: uppercase; letter-spacing: 0.5px; }
+@media (max-width: 560px) {
+    .lv-match { flex-direction: column; }
+    .lv-vs { padding: 4px 0; border-top: 1px solid #f0f0f0;
+             border-bottom: 1px solid #f0f0f0; text-align: center; }
+}
+</style>
+<style>
 .rules-doc { font-size: 14px; line-height: 1.6; color: #2c2c2e;
              max-width: 780px; }
 .rules-doc h1 { font-size: 22px; margin: 0 0 16px; }
@@ -1012,11 +1048,12 @@ table.prize-tbl .prize-empty { color:#999; font-style:italic; }
   <div class="hdr">
     <h1>FANTA CANADA</h1>
     <div class="sub">Season 2025-26</div>
-    <div class="freshness">Updated 2026-05-24 23:53</div>
+    <div class="freshness">Updated 2026-05-25 00:16</div>
   </div>
 
   <div class="tab-nav">
     <button class="active" data-tab="overview">📊 Overview</button>
+    
     <button data-tab="prizes">💰 Prizes</button>
     <button data-tab="squads">👥 Squads</button>
     <button data-tab="stats">⚽ Player Stats</button>
@@ -1522,6 +1559,8 @@ table.prize-tbl .prize-empty { color:#999; font-style:italic; }
 </details>
     </section>
   </div>
+
+  
 
   <div class="tab-content" id="tab-prizes">
     <div class="prizes-tab"><div class="tab-hero"><div class="th-main"><div class="th-eyebrow">💰 Prize pool</div><div class="th-headline">$4000</div><div class="th-sub">8 teams × $500 buy-in</div></div><div class="th-tiles"><div class="th-tile"><div class="th-tile-label">IN PRIZES</div><div class="th-tile-value">$4000</div></div></div></div><section><div class="prize-section-hdr">Current season — 2025-26</div><table class="prize-tbl"><thead><tr><th>Prize</th><th class="amt">Amount</th><th>Currently leading</th><th class="status">Status</th></tr></thead><tbody><tr><td>Scudetto — 1st</td><td class="amt"><b>$1500</b></td><td>Diego and Ale <span class="wk-detail">(Thurman Murman) · 1st place · 67 pts</span></td><td class="status">🔒</td></tr><tr><td>Scudetto — 2nd</td><td class="amt"><b>$800</b></td><td>Rob Simone <span class="wk-detail">(Curva Sud) · 2nd place · 62 pts</span></td><td class="status">⏳</td></tr><tr><td>Scudetto — 3rd</td><td class="amt"><b>$300</b></td><td>Nalli <span class="wk-detail">(Mica Malen FC) · 3rd place · 61 pts</span></td><td class="status">⏳</td></tr><tr><td>Champions</td><td class="amt"><b>$500</b></td><td>Diego and Ale <span class="wk-detail">(Thurman Murman) · def. Mica Malen FC 1-0</span></td><td class="status">🔒</td></tr><tr><td>Coppa Italia</td><td class="amt"><b>$300</b></td><td>Nalli <span class="wk-detail">(Mica Malen FC) · def. The Rookies 5-3</span></td><td class="status">🔒</td></tr><tr><td>Most sommas</td><td class="amt"><b>$220</b></td><td>Rob Simone <span class="wk-detail">(Curva Sud) · 2756.5 somma punti</span></td><td class="status">⏳</td></tr><tr><td>Weekly prizes</td><td class="amt">$10/giornata · <b>$380</b> season total</td><td><div class="wk-leaders"><div class="wk-leader"><b>$90</b><span>Rob Simone <span class="wk-detail">(Curva Sud) · 9 weekly win(s) / 37 giornate</span></span></div><div class="wk-leader"><b>$65</b><span>Mannie and Nick <span class="wk-detail">(Manniefresca) · 6.5 weekly win(s) / 37 giornate</span></span></div><div class="wk-leader"><b>$65</b><span>Nalli <span class="wk-detail">(Mica Malen FC) · 6.5 weekly win(s) / 37 giornate</span></span></div><details><summary>+5 more</summary><div class="wk-leader"><b>$50</b><span>Diego and Ale <span class="wk-detail">(Thurman Murman) · 5 weekly win(s) / 37 giornate</span></span></div><div class="wk-leader"><b>$45</b><span>Mixers <span class="wk-detail">(The Mixers) · 4.5 weekly win(s) / 37 giornate</span></span></div><div class="wk-leader"><b>$20</b><span>Ciampa <span class="wk-detail">(PAGA FC) · 2 weekly win(s) / 37 giornate</span></span></div><div class="wk-leader"><b>$20</b><span>Mike and Paul <span class="wk-detail">(The Rookies) · 2 weekly win(s) / 37 giornate</span></span></div><div class="wk-leader"><b>$15</b><span>Mau and Paul <span class="wk-detail">(The vets) · 1.5 weekly win(s) / 37 giornate</span></span></div></details></div></td><td class="status">split per giornata</td></tr></tbody></table></section><section><div class="prize-section-hdr">💰 Manager standings</div><div class="potbar"><span>Total paid out: <b>$3990</b></span><span>🔒 secured · ⏳ provisional (final round pending)</span></div><div class="win-list"><div class="win-card top"><div class="win-hd"><span class="win-mgr">Diego and Ale</span><span class="win-team">Thurman Murman</span><span class="win-total">$2050 ⏳</span></div><div class="win-row"><span class="win-mark">🔒</span><span class="win-label">Scudetto — 1st</span><span class="win-detail">1st place · 67 pts</span><span class="win-amt">$1500</span></div><div class="win-row"><span class="win-mark">🔒</span><span class="win-label">Champions</span><span class="win-detail">def. Mica Malen FC 1-0</span><span class="win-amt">$500</span></div><div class="win-row"><span class="win-mark">⏳</span><span class="win-label">Weekly prizes</span><span class="win-detail">5 weekly win(s) / 37 giornate</span><span class="win-amt">$50</span></div></div><div class="win-card"><div class="win-hd"><span class="win-mgr">Rob Simone</span><span class="win-team">Curva Sud</span><span class="win-total">$1110 ⏳</span></div><div class="win-row"><span class="win-mark">⏳</span><span class="win-label">Scudetto — 2nd</span><span class="win-detail">2nd place · 62 pts</span><span class="win-amt">$800</span></div><div class="win-row"><span class="win-mark">⏳</span><span class="win-label">Most sommas</span><span class="win-detail">2756.5 somma punti</span><span class="win-amt">$220</span></div><div class="win-row"><span class="win-mark">⏳</span><span class="win-label">Weekly prizes</span><span class="win-detail">9 weekly win(s) / 37 giornate</span><span class="win-amt">$90</span></div></div><div class="win-card"><div class="win-hd"><span class="win-mgr">Nalli</span><span class="win-team">Mica Malen FC</span><span class="win-total">$665 ⏳</span></div><div class="win-row"><span class="win-mark">⏳</span><span class="win-label">Scudetto — 3rd</span><span class="win-detail">3rd place · 61 pts</span><span class="win-amt">$300</span></div><div class="win-row"><span class="win-mark">🔒</span><span class="win-label">Coppa Italia</span><span class="win-detail">def. The Rookies 5-3</span><span class="win-amt">$300</span></div><div class="win-row"><span class="win-mark">⏳</span><span class="win-label">Weekly prizes</span><span class="win-detail">6.5 weekly win(s) / 37 giornate</span><span class="win-amt">$65</span></div></div><div class="win-card"><div class="win-hd"><span class="win-mgr">Mannie and Nick</span><span class="win-team">Manniefresca</span><span class="win-total">$65 ⏳</span></div><div class="win-row"><span class="win-mark">⏳</span><span class="win-label">Weekly prizes</span><span class="win-detail">6.5 weekly win(s) / 37 giornate</span><span class="win-amt">$65</span></div></div><div class="win-card"><div class="win-hd"><span class="win-mgr">Mixers</span><span class="win-team">The Mixers</span><span class="win-total">$45 ⏳</span></div><div class="win-row"><span class="win-mark">⏳</span><span class="win-label">Weekly prizes</span><span class="win-detail">4.5 weekly win(s) / 37 giornate</span><span class="win-amt">$45</span></div></div><div class="win-card"><div class="win-hd"><span class="win-mgr">Ciampa</span><span class="win-team">PAGA FC</span><span class="win-total">$20 ⏳</span></div><div class="win-row"><span class="win-mark">⏳</span><span class="win-label">Weekly prizes</span><span class="win-detail">2 weekly win(s) / 37 giornate</span><span class="win-amt">$20</span></div></div><div class="win-card"><div class="win-hd"><span class="win-mgr">Mike and Paul</span><span class="win-team">The Rookies</span><span class="win-total">$20 ⏳</span></div><div class="win-row"><span class="win-mark">⏳</span><span class="win-label">Weekly prizes</span><span class="win-detail">2 weekly win(s) / 37 giornate</span><span class="win-amt">$20</span></div></div><div class="win-card"><div class="win-hd"><span class="win-mgr">Mau and Paul</span><span class="win-team">The vets</span><span class="win-total">$15 ⏳</span></div><div class="win-row"><span class="win-mark">⏳</span><span class="win-label">Weekly prizes</span><span class="win-detail">1.5 weekly win(s) / 37 giornate</span><span class="win-amt">$15</span></div></div></div></section><section><div class="prize-section-hdr">Last season — 2024-25</div><table class="prize-tbl"><thead><tr><th>Prize</th><th class="amt">Amount</th><th>Winner</th></tr></thead><tbody><tr><td>Scudetto — 1st</td><td class="amt"><b>$1400</b></td><td>Rob Simone <span class="wk-detail">(Curva Sud)</span></td></tr><tr><td>Scudetto — 2nd</td><td class="amt"><b>$700</b></td><td>Mike and Paul <span class="wk-detail">(The Rookies)</span></td></tr><tr><td>Scudetto — 3rd</td><td class="amt"><b>$300</b></td><td>Ciampa <span class="wk-detail">(PAGA FC)</span></td></tr></tbody></table></section></div>
